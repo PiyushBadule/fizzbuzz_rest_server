@@ -1,0 +1,97 @@
+openapi: 3.0.0
+info:
+  title: FizzBuzz REST API
+  version: 1.0.0
+  description: API for FizzBuzz operations and statistics.
+
+servers:
+  - url: http://127.0.0.1:5000/
+    description: Development server
+tags:
+    - name: API for FIZZBUZZ
+
+paths:
+  /api/fizzbuzz:
+      post:
+        tags: [API for FIZZBUZZ]
+        summary: Execute FizzBuzz and return sequence
+        description: Accepts FizzBuzz parameters in form data and returns the HTML page with the calculated sequence.
+        requestBody:
+          required: true
+          content:
+            multipart/form-data:
+              schema:
+                type: object
+                properties:
+                  first_integer:
+                    type: integer
+                    required: true
+                  second_integer:
+                    type: integer
+                    required: true
+                  sequence_limit:
+                    type: integer
+                    required: true
+                  first_string:
+                    type: string
+                    required: true
+                  second_string:
+                    type: string
+                    required: true
+        responses:
+          '200':
+            description: Successfully calculated and rendered FizzBuzz sequence.
+            content:
+              text/html:
+                schema:
+                  type: string
+          '400':
+            description: Bad request due to invalid input.
+
+  /api/statistics:
+      get:
+        tags: [API for FIZZBUZZ]
+        summary: Get most used FizzBuzz request
+        description: Returns the HTML page with the parameters of the most frequently used FizzBuzz request and the number of times it was requested.
+        responses:
+          '200':
+            description: Successfully rendered page with FizzBuzz statistics.
+            content:
+              text/html:
+                schema:
+                  type: string
+
+  /api/reset_statistics:
+      post:
+        tags: [API for FIZZBUZZ]
+        summary: Reset FizzBuzz Statistics
+        description: Resets the FizzBuzz statistics stored in the database and redirects to the home page.
+        responses:
+          '200':
+            description: Successfully reset the statistics and redirected to the home page.
+            content:
+              text/html:
+                schema:
+                  type: string
+
+components:
+  schemas:
+    FizzBuzzRequest:
+      type: object
+      properties:
+        first_integer:
+          type: integer
+        second_integer:
+          type: integer
+        sequence_limit:
+          type: integer
+        first_string:
+          type: string
+        second_string:
+          type: string
+      required:
+        - first_integer
+        - second_integer
+        - sequence_limit
+        - first_string
+        - second_string

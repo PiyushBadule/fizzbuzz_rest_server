@@ -1,0 +1,88 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+nav {
+    background-color: #007BFF;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+.stats-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.stats-button:hover {
+    background-color: #218838;
+}
+
+.custom-footer {
+    background-color: #343a40;
+    padding: 5px 0;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+.custom-footer::before {
+    content: "\1F389";
+    font-size: 36px;
+    margin-right: 10px;
+}

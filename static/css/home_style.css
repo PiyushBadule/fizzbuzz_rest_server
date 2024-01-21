@@ -1,0 +1,185 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* Change to stretch to fill the width */
+    min-height: 100vh; /* Set minimum height to viewport height */
+}
+
+header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+nav {
+    background-color: #007BFF;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+form.fizzbuzz-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
+    width: 800px;
+    text-align: center;
+    border: 1px solid #ccc;
+    transform: translateZ(0);
+    max-width: 800px;
+    min-width: 300px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-group {
+    flex: 1; /* Allows each group to expand */
+    margin-right: 10px;
+}
+
+/* Last item in row should not have right margin */
+.form-row .form-group:last-child {
+    margin-right: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 480px) {
+    .fizzbuzz-form {
+        width: 90%;
+    }
+}
+
+/* Increased spacing */
+.spacer {
+    height: 20px; /* Adjust as needed for more or less space */
+}
+
+/* Centering the Submit Button */
+.button-row {
+    justify-content: center;
+}
+
+/* Adjusting form group spacing */
+.form-group {
+    flex: 1; /* Allows each group to expand */
+    margin-right: 20px; /* Increased right margin */
+}
+
+.form-row .form-group:last-child {
+    margin-right: 0;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.stats-button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.stats-button:hover {
+    background-color: #218838;
+}
+
+.custom-footer {
+    background-color: #343a40;
+    padding: 5px 0;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+}
+
+.custom-footer::before {
+    content: "\1F389";
+    font-size: 36px;
+    margin-right: 10px;
+}

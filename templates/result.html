@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz Result</title>
+    <link rel="stylesheet" href="/static/css/result_style.css">
+</head>
+<body>
+<header>
+    <h1>FizzBuzz Result</h1>
+</header>
+
+<!-- Added Navigation Bar -->
+<nav>
+    <a href="/statistics" class="stats-button">View Statistics</a>
+    <a href="/api/docs" class="stats-button">Swagger</a>
+</nav>
+
+<main>
+    <h2>Result</h2>
+    <p>{{ stats['result'] | join(' ') }}</p>
+    <a href="/" class="button">Back to Homepage</a>
+</main>
+
+<footer class="custom-footer"></footer>
+</body>
+</html>

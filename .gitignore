@@ -1,0 +1,14 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Virtual environment
+venv/
+.env
+
+# Logs
+*.log
+
+# Database files (if using SQLite)
+*.sqlite
+
+.idea

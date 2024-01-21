@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Occurred</title>
+    <link rel="stylesheet" href="/static/css/error_style.css">
+</head>
+<body>
+<header>
+    <h1>Welcome To FizzBuzz</h1>
+    <p>A place where you can have fun with FizzBuzz!</p>
+</header>
+
+<nav>
+    <a href="/statistics" class="stats-button">View Statistics</a>
+    <a href="/api/docs" class="stats-button">Swagger</a>
+</nav>
+
+<div class="error-container">
+    <div class="error-icon">
+        <!-- Error icon SVG -->
+    </div>
+    <h1>An Error Occurred</h1>
+    <p>{{ error }}</p>
+    <div class="error-actions">
+        <a href="/" class="button">Return to Homepage</a>
+    </div>
+</div>
+
+<footer class="custom-footer">
+    <!-- Footer content -->
+</footer>
+
+</body>
+</html>

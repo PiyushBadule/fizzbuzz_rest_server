@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz Statistics</title>
+    <link rel="stylesheet" href="static/css/statistics_style.css">
+</head>
+<body>
+<header>
+    <h1>FizzBuzz Statistics</h1>
+</header>
+<!-- Added Navigation Bar -->
+<nav>
+    <a href="/api/docs" class="stats-button">Swagger</a>
+</nav>
+<main>
+    {% if stats %}
+    <div class="content-container">
+        <div id="statistics-item">
+            <div class="statistics-item">Below Parameters were hit <strong>{{ stats.count }}</strong> times</div>
+            <div class="statistics-table">
+                <table>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td><strong>First Integer</strong></td>
+                        <td>{{ stats.first_int }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Second Integer</strong></td>
+                        <td>{{ stats.second_int }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Limit</strong></td>
+                        <td>{{ stats.limit_val }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>First String</strong></td>
+                        <td>{{ stats.first_str }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Second String</strong></td>
+                        <td>{{ stats.second_str }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <p>No statistics available.</p>
+    {% endif %}
+    <div class="actions-container">
+        <button onclick="resetStatistics()" class="action-button">Reset Statistics</button>
+        <a href="/" class="action-button">Back to Homepage</a>
+    </div>
+</main>
+
+<footer class="custom-footer"></footer>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        loadStatistics();
+    });
+
+    function loadStatistics() {
+        fetch('/api/statistics')
+            .then(response => response.json())
+            .then(data => {
+                updateStatisticsContent(data);
+            });
+    }
+
+    function resetStatistics() {
+        event.preventDefault();
+        fetch('/api/reset_statistics', {
+            method: 'POST'
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            window.location.reload();  // Refresh the entire page
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
+    function updateStatisticsContent(stats) {
+        let content = '';
+        if (stats) {
+            content += '<div class="content-container">' +
+                       '<div id="statistics-item">' +
+                       '<div class="statistics-item">Below Parameters were hit <strong>' + stats.count + '</strong> times</div>' +
+                       '<div class="statistics-table">' +
+                       '<table><tr><th>Parameter</th><th>Value</th></tr>' +
+                       '<tr><td><strong>First Integer</strong></td><td>' + stats.first_int + '</td></tr>' +
+                       '<tr><td><strong>Second Integer</strong></td><td>' + stats.second_int + '</td></tr>' +
+                       '<tr><td><strong>Limit</strong></td><td>' + stats.limit_val + '</td></tr>' +
+                       '<tr><td><strong>First String</strong></td><td>' + stats.first_str + '</td></tr>' +
+                       '<tr><td><strong>Second String</strong></td><td>' + stats.second_str + '</td></tr>' +
+                       '</table></div></div></div>';
+        } else {
+            content += '<p>No statistics available.</p>';
+        }
+        document.getElementById('statistics-content').innerHTML = content;
+    }
+</script>
+</body>
+</html>

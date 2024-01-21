@@ -1,0 +1,223 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+header {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* Navigation Bar Styles */
+nav {
+    background-color: #007BFF;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+nav a.stats-button {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: #28a745;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a.stats-button:hover {
+    background-color: #218838;
+}
+
+main {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden; /* Prevent internal scrolling */
+    flex-grow: 1; /* Allow main to grow and push footer down */
+}
+
+.statistics-item {
+    margin: 10px 0 0 0;
+    font-size: 20px;
+    color: #333;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+a {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+a:visited {
+    color: #fff;
+}
+
+.statistics-table {
+    margin: 15px 0;
+    width: 100%;
+    overflow-x: auto; /* For smaller screens */
+}
+
+.statistics-table table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 600px;
+}
+
+.statistics-table th,
+.statistics-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.statistics-table th {
+    background-color: #007BFF;
+    color: white;
+    font-size: 20px;
+}
+
+.statistics-table td {
+    color: #333;
+    font-size: 18px;
+}
+
+.statistics-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.statistics-table tr:hover {
+    background-color: #ddd;
+}
+
+.actions-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Adjusts the space between the button and the link */
+}
+
+.action-button {
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block; /* Ensures that the elements are treated as inline blocks */
+    font-size: 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+form {
+    margin: 0; /* Removes default margin from the form */
+}
+
+a.action-button {
+    line-height: inherit; /* Aligns the link's line height with that of the button */
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* Additional adjustments for a consistent look */
+button.action-button, a.action-button {
+    min-width: 150px;  /* Ensures a minimum width for both elements */
+    text-align: center;
+}
+
+/* Optional: Styles for smaller screens */
+@media screen and (max-width: 600px) {
+    .actions-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.custom-footer {
+    background-color: #343a40;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+    font-size: 18px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-footer::before {
+    content: "\1F389";
+    font-size: 36px;
+    margin-right: 10px;
+}
+
+.action-button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.action-button:hover {
+    background-color: #0056b3;
+}
+
+button.action-button {
+    border: none;
+}

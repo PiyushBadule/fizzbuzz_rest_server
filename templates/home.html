@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+    <link rel="stylesheet" href="/static/css/home_style.css">
+</head>
+<body>
+<header>
+    <h1>Welcome To FizzBuzz</h1>
+    <p>A place where you can have fun with FizzBuzz!</p>
+</header>
+
+<nav>
+    <a href="/statistics" class="stats-button">View Statistics</a>
+    <a href="/api/docs" class="stats-button">Swagger</a>
+</nav>
+
+<main>
+    <h2>Try Out FizzBuzz</h2>
+    <form action="/fizzbuzz" method="post" class="fizzbuzz-form">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="first_integer">Enter First Integer</label>
+                <input type="number" id="first_integer" name="first_integer" value="3" required>
+            </div>
+
+            <div class="form-group">
+                <label for="second_integer">Enter Second Integer</label>
+                <input type="number" id="second_integer" name="second_integer" value="5" required>
+            </div>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="sequence_limit">Enter Limit</label>
+                <input type="number" id="sequence_limit" name="sequence_limit" value="100" required>
+            </div>
+
+            <div class="form-group">
+                <label for="first_string">Enter First String</label>
+                <input type="text" id="first_string" name="first_string" value="fizz" required>
+            </div>
+
+            <div class="form-group">
+                <label for="second_string">Enter Second String</label>
+                <input type="text" id="second_string" name="second_string" value="buzz" required>
+            </div>
+        </div>
+
+        <div class="form-row button-row">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</main>
+
+<footer class="custom-footer">
+</footer>
+
+</body>
+</html>
